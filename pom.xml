@@ -10,10 +10,10 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>17</java.version>
+        <java.version>21</java.version>
         <azure.functions.maven.plugin.version>1.22.0</azure.functions.maven.plugin.version>
         <azure.functions.java.library.version>3.1.0</azure.functions.java.library.version>
-        <maven.compiler.release>17</maven.compiler.release>
+        <maven.compiler.release>21</maven.compiler.release>
         <temporal.version>1.24.1</temporal.version>
         <h2.version>2.2.224</h2.version>
         <slf4j.version>2.0.12</slf4j.version>
@@ -81,14 +81,9 @@
                             <region>westeurope</region>
                             <runtime>
                                 <os>linux</os>
-                                <javaVersion>17</javaVersion>
+                                <javaVersion>21</javaVersion>
                             </runtime>
-                            <localDebugConfig>
-                                <transport>dt_socket</transport>
-                                <server>y</server>
-                                <suspend>n</suspend>
-                                <address>5005</address>
-                            </localDebugConfig>
+                            <localDebugConfig>transport=dt_socket,server=y,suspend=n,address=5005</localDebugConfig>
                         </configuration>
                         <executions>
                             <execution>

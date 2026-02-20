@@ -22,7 +22,7 @@ Este proyecto te deja probar un flujo **muy parecido a Azure real**, pero 100% l
 
 ### 0) Requisitos
 
-- Java 17
+- Java 21
 - Maven 3.9+
 - Azure Functions Core Tools v4
 - Azure CLI (opcional, para enviar mensajes a cola)
@@ -175,3 +175,9 @@ ORDER BY id DESC;
 - `src/main/java/com/example/functions/TemporalHistoryClient.java`: cliente de historial Temporal.
 - `src/main/java/com/example/functions/DatabaseRepository.java`: schema e inserción en H2.
 - `src/main/java/com/example/functions/WorkflowRequest.java`: payload (`workflowId`, `runId`).
+
+
+
+
+$h2jar="$env:USERPROFILE\.m2\repository\com\h2database\h2\2.2.224\h2-2.2.224.jar"
+java -cp "$h2jar" org.h2.tools.Shell -url "jdbc:h2:file:~/function-qeue-storage-data/workflow-history" -user "sa" -password "sa" -sql "SELECT workflow_id, run_id, event_id, event_
